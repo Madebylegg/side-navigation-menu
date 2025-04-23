@@ -29,3 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.sidebar').classList.add('peeked');
+});

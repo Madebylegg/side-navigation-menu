@@ -29,7 +29,7 @@ body {
   justify-content: center;
   background: #fff;
   color: #11101D;
-  font-size: 16px;        /* scale the icon down too */
+  font-size: 20px;        /* scale the icon down too */
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 100;
@@ -69,6 +69,28 @@ body {
 /* hide the peek button when the sidebar is “open” */
 .sidebar.open #hideBtn {
   display: none;
+}
+
+/* smoother, subtler bounce */
+@keyframes bouncePeek {
+  0%, 100% {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  25% {
+    transform: translateY(-62%) rotate(180deg); /* slight lift */
+  }
+  50% {
+    transform: translateY(-50%) rotate(180deg); /* back to rest */
+  }
+  75% {
+    transform: translateY(-58%) rotate(180deg); /* smaller follow-through */
+  }
+}
+
+.sidebar.peeked #hideBtn {
+  /* apply the new animation */
+  transform: translateY(-50%) rotate(180deg);
+  animation: bouncePeek 3s ease-in-out infinite;
 }
 
 
