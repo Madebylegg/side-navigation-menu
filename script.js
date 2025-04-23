@@ -1,24 +1,31 @@
-let sidebar = document.querySelector(".sidebar");
-let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar   = document.querySelector('.sidebar');
+  const closeBtn  = document.querySelector('#btn');
+  const searchBtn = document.querySelector('.bx-search');
+  const peekBtn   = document.querySelector('#hideBtn'); // ← your “chevrons” button
 
-// Toggle sidebar visibility and update button icon
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  menuBtnChange();
-});
+  // toggle open/closed
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    updateMenuIcon();
+  });
 
-// Open sidebar when search icon is clicked
-searchBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  menuBtnChange();
-});
+  // same for search icon
+  searchBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    updateMenuIcon();
+  });
 
-// Update button icon based on sidebar state
-function menuBtnChange() {
-  if (sidebar.classList.contains("open")) {
-    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-  } else {
-    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  // peek in/out by 80px
+  peekBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('peeked');
+  });
+
+  function updateMenuIcon() {
+    if (sidebar.classList.contains('open')) {
+      closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+    } else {
+      closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+    }
   }
-}
+});
