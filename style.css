@@ -11,6 +11,45 @@
 body {
   overflow-x: hidden;
 }
+#hideBtn {
+  /* override the generic .sidebar i rule */
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+
+  /* keep the rest of your styling */
+  position: absolute;
+  top: 50%;
+  right: -35px;           /* half of 30px so it straddles */
+  transform: translateY(-50%);
+  padding: 0;             /* remove any extra padding */
+  box-sizing: border-box; /* be safe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #11101D;
+  font-size: 16px;        /* scale the icon down too */
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+/* Optional: Add hover effect to improve interactivity */
+#hide-btn:hover {
+  background-color: #ddd; /* Change the background color on hover */
+}
+
+
+/* 2) When .peeked is toggled, shift it left by 80px */
+.sidebar.peeked {
+  transform: translateX(-80px);
+}
+
+/* if you want the arrow to rotate when “peeked” */
+.sidebar.peeked #hideBtn {
+  transform: translateY(-50%) rotate(180deg);
+}
 
 .sidebar {
   position: fixed;
@@ -21,8 +60,17 @@ body {
   background: #11101D;
   padding: 6px 14px;
   z-index: 99;
-  transition: all 0.5s ease;
+  transform: translateX(0);
+  transition:
+    transform 0.4s ease,
+    width     0.5s ease;      /* <-- add this */
 }
+
+/* hide the peek button when the sidebar is “open” */
+.sidebar.open #hideBtn {
+  display: none;
+}
+
 
 .sidebar.open {
   width: 250px;
@@ -262,19 +310,14 @@ body {
 }
 
 .home-section {
+  /* now full-width, sitting below the fixed sidebar */
+  margin: 0;
+  padding: 0; /* whatever your default is */
   position: relative;
-  background: #E4E9F7;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
-  z-index: 2;
+  z-index: 1;
 }
-
-.sidebar.open~.home-section {
-  left: 250px;
-  width: calc(100% - 250px);
+.sidebar {
+  z-index: 99;  /* stays on top */
 }
 
 .home-section .text {
