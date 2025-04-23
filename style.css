@@ -355,3 +355,17 @@ body {
     display: none;
   }
 }
+
+@media (max-width: 431px) {
+  /* Sidebar itself goes full-width when open */
+  .sidebar.open {
+    width: 100% !important;
+    transform: translateX(0) !important;
+  }
+
+  /* Ensure the profile row also spans the full width */
+  .sidebar.open li.profile {
+    width: 100% !important;
+    transform: translateX(0) !important;
+  }
+}
