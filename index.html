@@ -1,109 +1,150 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Boxicons CDN Link -->
+		<link
+			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Boxicons CDN Link -->
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+	<body>
+		<div class="sidebar">
+			<i class="bx bx-chevrons-left hide-btn" id="hideBtn"></i>
+			<div class="logo-details">
+				<i class="bx bxs-shopping-bag icon"></i>
+				<div class="logo_name">ShopperCo</div>
+				<i class="bx bx-menu" id="btn"></i>
+			</div>
+			<ul class="nav-list">
+				<li>
+					<i class="bx bx-search"></i>
+					<input type="text" placeholder="Search products..." />
+					<span class="tooltip">Search</span>
+				</li>
+				<li>
+					<a href="/">
+						<i class="bx bx-home-alt"></i>
+						<span class="links_name">Home</span>
+					</a>
+					<span class="tooltip">Home</span>
+				</li>
+				<li>
+					<a href="/products">
+						<i class="bx bx-store"></i>
+						<span class="links_name">Shop All</span>
+					</a>
+					<span class="tooltip">Shop All</span>
+				</li>
+				<li class="has-submenu">
+					<a href="#" class="submenu-toggle">
+						<i class="bx bx-category"></i>
+						<span class="links_name">Categories</span>
+						<i class="bx bx-chevron-down chevron"></i>
+					</a>
+					<ul class="submenu">
+						<li>
+							<a href="/categories/clothing">
+								<i class="bx bxs-t-shirt"></i>
+								<span class="links_name">Clothing</span>
+							</a>
+						</li>
+						<li>
+							<a href="/categories/electronics">
+								<i class="bx bxs-tv"></i>
+								<span class="links_name">Electronics</span>
+							</a>
+						</li>
+						<li>
+							<a href="/categories/electronics">
+								<i class="bx bxs-tv"></i>
+								<span class="links_name">Electronics</span>
+							</a>
+						</li>
+						<li>
+							<a href="/categories/electronics">
+								<i class="bx bxs-tv"></i>
+								<span class="links_name">Electronics</span>
+							</a>
+						</li>
+						<li>
+							<a href="/categories/electronics">
+								<i class="bx bxs-tv"></i>
+								<span class="links_name">Electronics</span>
+							</a>
+						</li>
+						<li>
+							<a href="/categories/electronics">
+								<i class="bx bxs-tv"></i>
+								<span class="links_name">Electronics</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/new-arrivals">
+						<i class="bx bx-star"></i>
+						<span class="links_name">New Arrivals</span>
+					</a>
+					<span class="tooltip">New Arrivals</span>
+				</li>
+				<li>
+					<a href="/best-sellers">
+						<i class="bx bx-trending-up"></i>
+						<span class="links_name">Best Sellers</span>
+					</a>
+					<span class="tooltip">Best Sellers</span>
+				</li>
+				<li>
+					<a href="/sale">
+						<i class="bx bxs-discount"></i>
+						<span class="links_name">Sale</span>
+					</a>
+					<span class="tooltip">Sale</span>
+				</li>
 
-<body>
-  <div class="sidebar"> <i class="bx bx-chevrons-left hide-btn" id="hideBtn"></i>
-    <div class="logo-details">
-      <i class="bx bxs-shopping-bag icon"></i>
-      <div class="logo_name">ShopperCo</div>
-      <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search products..." />
-        <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="/">
-          <i class="bx bx-home-alt"></i>
-          <span class="links_name">Home</span>
-        </a>
-        <span class="tooltip">Home</span>
-      </li>
-      <li>
-        <a href="/products">
-          <i class="bx bx-store"></i>
-          <span class="links_name">Shop All</span>
-        </a>
-        <span class="tooltip">Shop All</span>
-      </li>
-      <li>
-        <a href="/new-arrivals">
-          <i class="bx bx-star"></i>
-          <span class="links_name">New Arrivals</span>
-        </a>
-        <span class="tooltip">New Arrivals</span>
-      </li>
-      <li>
-        <a href="/best-sellers">
-          <i class="bx bx-trending-up"></i>
-          <span class="links_name">Best Sellers</span>
-        </a>
-        <span class="tooltip">Best Sellers</span>
-      </li>
-      <li>
-        <a href="/sale">
-          <i class="bx bxs-discount"></i>
-          <span class="links_name">Sale</span>
-        </a>
-        <span class="tooltip">Sale</span>
-      </li>
-      <li>
-        <a href="/categories">
-          <i class="bx bx-category"></i>
-          <span class="links_name">Categories</span>
-        </a>
-        <span class="tooltip">Categories</span>
-      </li>
-      <li>
-        <a href="/cart">
-          <i class="bx bx-cart"></i>
-          <span class="links_name">Cart</span>
-        </a>
-        <span class="tooltip">Cart</span>
-      </li>
-      <li>
-        <a href="/wishlist">
-          <i class="bx bx-heart"></i>
-          <span class="links_name">Wishlist</span>
-        </a>
-        <span class="tooltip">Wishlist</span>
-      </li>
-      <li>
-        <a href="/settings">
-          <i class="bx bx-cog"></i>
-          <span class="links_name">Settings</span>
-        </a>
-        <span class="tooltip">Settings</span>
-      </li>
-      <li class="profile">
-        <div class="profile-details">
-          <img src="profile.jpg" alt="profileImg" />
-          <div class="name_job">
-            <div class="name">Prem Shahi</div>
-            <div class="job">Premium Member</div>
-          </div>
-        </div>
-        <i class="bx bx-log-out" id="log_out"></i>
-      </li>
-    </ul>
-  </div>
+				<li>
+					<a href="/cart">
+						<i class="bx bx-cart"></i>
+						<span class="links_name">Cart</span>
+					</a>
+					<span class="tooltip">Cart</span>
+				</li>
+				<li>
+					<a href="/wishlist">
+						<i class="bx bx-heart"></i>
+						<span class="links_name">Wishlist</span>
+					</a>
+					<span class="tooltip">Wishlist</span>
+				</li>
+				<li>
+					<a href="/settings">
+						<i class="bx bx-cog"></i>
+						<span class="links_name">Settings</span>
+					</a>
+					<span class="tooltip">Settings</span>
+				</li>
+				<li class="profile">
+					<div class="profile-details">
+						<img src="profile.jpg" alt="profileImg" />
+						<div class="name_job">
+							<div class="name">Prem Shahi</div>
+							<div class="job">Premium Member</div>
+						</div>
+					</div>
+					<i class="bx bx-log-out" id="log_out"></i>
+				</li>
+			</ul>
+		</div>
 
-  <section class="home-section">
-    <div class="text">Dashboard</div>
-  </section>
+		<section class="home-section">
+			<div class="text">Dashboard</div>
+		</section>
 
-  <script src="script.js"></script>
-</body>
-
+		<script src="script.js"></script>
+	</body>
 </html>

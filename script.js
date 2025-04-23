@@ -32,3 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.sidebar').classList.add('peeked');
 });
+
+// JS to toggle the submenu open/closed
+document.querySelectorAll('.has-submenu > .submenu-toggle').forEach(toggle => {
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    toggle.parentElement.classList.toggle('open-submenu');
+  });
+});

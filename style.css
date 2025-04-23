@@ -1,4 +1,6 @@
-/* Google Font Link */
+/* --------------------------
+   GLOBAL STYLES
+--------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
@@ -11,6 +13,11 @@
 body {
   overflow-x: hidden;
 }
+
+/* --------------------------
+   HIDE-SIDEBAR-BUTTON STYLES
+--------------------------- */
+
 #hideBtn {
   /* override the generic .sidebar i rule */
   width: 30px !important;
@@ -40,30 +47,9 @@ body {
   background-color: #ddd; /* Change the background color on hover */
 }
 
-
-/* 2) When .peeked is toggled, shift it left by 80px */
-.sidebar.peeked {
-  transform: translateX(-80px);
-}
-
 /* if you want the arrow to rotate when “peeked” */
 .sidebar.peeked #hideBtn {
   transform: translateY(-50%) rotate(180deg);
-}
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 78px;
-  background: #11101D;
-  padding: 6px 14px;
-  z-index: 99;
-  transform: translateX(0);
-  transition:
-    transform 0.4s ease,
-    width     0.5s ease;      /* <-- add this */
 }
 
 /* hide the peek button when the sidebar is “open” */
@@ -93,6 +79,29 @@ body {
   animation: bouncePeek 3s ease-in-out infinite;
 }
 
+/* --------------------------
+   SIDEBAR STRUCTURE
+--------------------------- */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transform: translateX(0);
+  transition:
+    transform 0.4s ease,
+    width     0.5s ease;      /* <-- add this */
+}
+
+/* 2) When .peeked is toggled, shift it left by 80px */
+.sidebar.peeked {
+  transform: translateX(-80px);
+}
 
 .sidebar.open {
   width: 250px;
@@ -331,17 +340,75 @@ body {
   background: none;
 }
 
+.sidebar {
+  z-index: 99;  /* stays on top */
+}
+
+/* --------------------------
+   SUBMENU STYLES
+--------------------------- */
+
+.has-submenu .submenu {
+  background: #11101D;         
+  margin: 0;                   
+  padding: 0;                  
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;      
+}
+
+/* Each submenu item */
+.has-submenu .submenu li {
+  list-style: none;
+  margin: 0;
+}
+
+/* Submenu links */
+.has-submenu .submenu li a {
+  display: flex;
+  align-items: center;
+  color: #fff;              
+  font-size: 15px;          
+  font-weight: 400;
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Submenu link hover */
+.has-submenu .submenu li a:hover {
+  background: #FFF;     
+  color: #11101D;
+}
+
+/* Expand/collapse transition */
+.has-submenu .submenu {
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.has-submenu.open-submenu .submenu {
+  max-height: 500px;    
+}
+
+/* Chevron alignment & flip */
+.has-submenu .chevron {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.has-submenu.open-submenu .chevron {
+  transform: rotate(180deg);
+}
+
+
+/* --------------------------
+   HOME SECTION STYLES
+--------------------------- */
+
 .home-section {
-  /* now full-width, sitting below the fixed sidebar */
   margin: 0;
   padding: 0; /* whatever your default is */
   position: relative;
   z-index: 1;
 }
-.sidebar {
-  z-index: 99;  /* stays on top */
-}
-
 .home-section .text {
   display: inline-block;
   color: #11101d;
@@ -369,3 +436,4 @@ body {
     transform: translateX(0) !important;
   }
 }
+
